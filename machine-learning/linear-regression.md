@@ -4,9 +4,7 @@
 
 Aka. Linear regression with one variable or univariate linear regression . 
 
-<br/>This just means that **y** is a linear function of **x**: h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x
-
-where the &theta;'s are called the **parameters** of the model
+This just means that **y** is a linear function of **x**: h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x, where the &theta;'s are called the **parameters** of the model
 
 ### Cost Function
 
@@ -18,6 +16,5 @@ We can actually minimize 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</s
 
 and plug in the equation for h(x) to this formula and minimize &theta;0 and &theta;1
 
-
-Therefore, we say the cost function is: J(&theta;0, &theta;1) = 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</sup> and we minimize this cost function.
+<br/>Therefore, we say the cost function is: J(&theta;0, &theta;1) = 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</sup> and we minimize this cost function.
 
