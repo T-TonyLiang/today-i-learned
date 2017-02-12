@@ -8,7 +8,7 @@ How do we represent the hypothesis function?
 
 This just means that **y** is a linear function of **x**:
 
-h\theta (x) = \theta <sub>0</sub> + \theta <sub>1</sub>
+h&theta;(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>
 
 ### Cost Function
 
