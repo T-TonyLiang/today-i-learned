@@ -27,6 +27,26 @@ The **gradient descent algorithm** is:
 
 repeat until convergence: θj:=θj−α*(∂/∂θ)J(θ0,θ1)
 
-where j=0,1 represents the feature index number, α a constant that represent how big your "baby steps are" (rate of descent) and the last term is the derivative of the cost function at θ0 and θ1.
+where j=0,1 represents the feature index number, α a constant that represent how big your "baby steps are" (learning rate) and the last term is the derivative of the cost function at θ0 and θ1.
 
 *Note: at each iteration J one should simultaneously update the parameters θ0 and θ1. (Required of the algorithm)*
+
+### The learning rate α
+The learning rate is responsible for how fast a gradient descent algorithm converges. If the learning rate is too small then the algorithm can be slow. However, if the learning rate is too big, it is possible for the algorithm to overshoot the minimum and fail to converge, or even diverge.
+
+**How does the descent converge with fixed steps of α?**
+The key is that the learning rate is multiplied by the derivative part (the slope), and even with a fixed rate, as long as the slope gets smaller and smaller, the algorithm will be taking smaller steps towards the minimum and converge.
+
+### Applying gradient descent to linear regression
+
+When we substitute the derivative part of the gradient descent algorithm it becomes:
+
+**θ0:=θ0−α\*((1/m)\*∑(hθ(xi)−yi))**
+
+**θ1:=θ1−α\*((1/m)\*∑(hθ(xi)−yi)xi)**
+
+*You can try deriving the partial derivative if you wish, not done here*
+
+**Batch Gradient Descent**: The method of gradient descent that looks at every example in the entire training set on every step.
+
+*Note: Gradient descent can be susceptible to local minima but for the problem of regression gradient descent will always converge to the global minimum. Since J is a convex function*
