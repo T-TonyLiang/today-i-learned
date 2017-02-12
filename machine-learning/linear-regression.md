@@ -26,4 +26,5 @@ An algorithm to find the minimum of an *n* parameter function where you start of
 The gradient descent algorithm is:
 
 repeat until convergence: θj:=θj−α(∂/∂θ)J(θ0,θ1)
+
 where j=0,1 represents the feature index number, α a constant that represent how big your "baby steps are" (rate of descent) and the last term is the derivative of the cost function at θ0 and θ1.
