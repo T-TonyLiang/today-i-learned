@@ -50,7 +50,7 @@ There is no feedback based on the prediction results
 
 **(x,y)** - one training example
 
-**(x<sup>i</sup>, y<sup>i</sup>)** - ith training example
+**(x<sup>i</sup>, y<sup>i</sup>)** - i<sup>th</sup> training example
 
 Training Set --> *feeds into* Learning Algorithm --> *outputs* a function **h**
 
