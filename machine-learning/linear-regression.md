@@ -17,3 +17,5 @@ We can actually minimize 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</s
 <br/>Therefore, we say the cost function is: J(&theta;0, &theta;1) = 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</sup> and we minimize this cost function.
 
 This is a commonly used function for regression problems.
+
+*Note: the graph of h(x) is dependent on the the value of &theta; that is chosen, while the the graph of the cost function is like a positive parabola. where the minimizing value for J lies at 0 and is the best possible value for the line of best fit.*
