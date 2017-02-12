@@ -4,7 +4,7 @@
 
 Aka. Linear regression with one variable or univariate linear regression . 
 
-This just means that **y** is a linear function of **x**: h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x
+<br/>This just means that **y** is a linear function of **x**: h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x
 
 where the &theta;'s are called the **parameters** of the model
 
