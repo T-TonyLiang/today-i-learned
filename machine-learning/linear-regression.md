@@ -23,7 +23,7 @@ This is a commonly used function for regression problems.
 ## Gradient Descent
 An algorithm to find the minimum of an *n* parameter function where you start off in a place and take baby steps towards the steepest path going in the down direction.
 
-The gradient descent algorithm is:
+The **gradient descent algorithm** is:
 
 repeat until convergence: θj:=θj−α(∂/∂θ)J(θ0,θ1)
 
