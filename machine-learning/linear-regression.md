@@ -19,3 +19,13 @@ We can actually minimize 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</s
 This is a commonly used function for regression problems.
 
 *Note: the graph of h(x) is dependent on the the value of &theta; that is chosen, while the the graph of the cost function is like a bowl shaped function, showing all values of &theta;. The minizing value lies at 0 and is the best possible value for the line of best fit.*
+
+## Gradient Descent
+An algorithm to find the minimum of an *n* parameter function where you start off in a place and take baby steps towards the steepest path going in the down direction.
+
+The gradient descent algorithm is:
+
+repeat until convergence:
+
+θj:=θj−α∂∂θjJ(θ0,θ1)
+where j=0,1 represents the feature index number.
