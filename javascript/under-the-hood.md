@@ -17,7 +17,7 @@ Javascript runtime contains a message queue. A function is associated with each 
 > When the stack has enough capacity, a message is taken out of the queue and processed. The processing consists of calling the associated function (and thus creating an initial stack frame). The message processing ends when the stack becomes empty again.
 
 Usually implemented like:
-```
+```javascript
 while (queue.waitForMessage()) {
 	queue.processNextMessage();
 }
