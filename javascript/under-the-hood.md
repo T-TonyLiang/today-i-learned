@@ -1,6 +1,6 @@
 # Under The Hood
 
-## Runtime 
+## Runtime Concepts
 
 **Stack**: Function calls form a stack of frames. Each frame contains the arguments and variables of a function (like a private workspace for the scope). 
 
@@ -10,7 +10,7 @@
 **Queue**:
 > A JavaScript runtime contains a message queue, which is a list of messages to be processed. A function is associated with each message. When the stack has enough capacity, a message is taken out of the queue and processed. The processing consists of calling the associated function (and thus creating an initial stack frame). The message processing ends when the stack becomes empty again.
 
-### Event loop
+## Event loop
 
 Javascript runtime contains a message queue. A function is associated with each message. 
 
@@ -24,13 +24,13 @@ while (queue.waitForMessage()) {
 ```
 *The queue waits synchronously for a message to arrive if there is none currently*
 
-#### Run to completion
+### Run to completion
 Each message is processed completely to completion. 
 > Whenever a function runs, it cannot be pre-empted and will run entirely before any other code runs (and can modify data the function manipulates).
 
 Downside: Could block user interaction if a message takes too long to run. Browsers now support a "script taking a long time to run" message.
 
-#### Adding messages (Events and setTimeout)
+### Adding messages (Events and setTimeout)
 - messages added when event occurs on an event listener
 - if there isnt a listener the event is lost
 - calling `setTimeout` will add a message to the queue after the time passed, the callback will be called after a *minimum* time specified in the second argument. Not a guarenteed time
