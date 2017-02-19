@@ -4,7 +4,8 @@
 
 Aka. Linear regression with one variable or univariate linear regression . 
 
-This just means that **y** is a linear function of **x**: h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x, where the &theta;'s are called the **parameters** of the model
+This just means that **y** is a linear function of **x**: 
+>h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x, where the &theta;'s are called the **parameters** of the model
 
 ### Cost Function or Squared Error function
 
@@ -41,12 +42,26 @@ The key is that the learning rate is multiplied by the derivative part (the slop
 
 When we substitute the derivative part of the gradient descent algorithm it becomes:
 
-**θ0:=θ0−α\*((1/m)\*∑(hθ(xi)−yi))**
+>θ0:=θ0−α\*((1/m)\*∑(hθ(xi)−yi))
 
-**θ1:=θ1−α\*((1/m)\*∑(hθ(xi)−yi)xi)**
+>θ1:=θ1−α\*((1/m)\*∑(hθ(xi)−yi)xi)
 
 *You can try deriving the partial derivative if you wish, not done here*
 
 **Batch Gradient Descent**: The method of gradient descent that looks at every example in the entire training set on every step.
 
 *Note: Gradient descent can be susceptible to local minima but for the problem of regression gradient descent will always converge to the global minimum. Since J is a convex function*
+
+## Multivariate Linear Regression
+More than 1 features affecting the output variable.
+
+let *n* be the number of features, *x<sup>(i)</sup>* be a vector in R<sup>n</sup>representing the input features of a training example and *x<sup>(i)</sup><sub>j</sub>* be the jth feature of the ith training example. 
+
+### New Hypothesis
+>h<sub>&theta;</sub>(x) = &theta;<sub>0</sub> + &theta;<sub>1</sub>x<sub>1</sub> + &theta;<sub>2</sub>x<sub>2</sub> + &theta;<sub>3</sub>x<sub>3</sub> ... &theta;<sub>n</sub>x<sub>n</sub>
+
+Another way of writing it is to define x<sub>0</sub> = 1 and let x be a n+1 dimensional vector: [x0, x1, x2, x2 ... xn] and let &theta; be a n+1 dimensional vector: [&theta;0, &theta;1, &theta;2, &theta;3... &theta;n]. Then:
+
+>h<sub>&theta;</sub>(x) = &theta;<sup>T</sup>x 
+(Theta transposed x -- where Theta transposed is a 1 by n+1 matrix since it is transposed and x is a n+1 by 1 matrix)
+
