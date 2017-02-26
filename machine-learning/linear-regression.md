@@ -14,9 +14,9 @@ How to figure out what the best possible line fit is for the data.
 
 **Idea**: Choose &theta;<sub>0</sub> and &theta;<sub>1</sub> so that h<sub>&theta;</sub>(x) is close to *y* for our training examples (*x*, *y*)
 
-We can actually minimize 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</sup> for all i = 1 to *m*, and plug in the equation for h(x) to this formula and minimize &theta;0 and &theta;1
+We can actually minimize 1/2*m* * &Sigma;<sup>i</sup><sub>m</sub>(h<sub>&theta;</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)<sup>2</sup> for all i = 1 to *m*, and plug in the equation for h(x) to this formula and minimize &theta;0 and &theta;1
 
-<br/>Therefore, we say the cost function is: J(&theta;0, &theta;1) = 1/2*m* * &Sigma;(h<sub>&theta;</sub>(xi) - yi)<sup>2</sup> and we minimize this cost function.
+<br/>Therefore, we say the cost function is: J(&theta;0, &theta;1) = 1/2*m* * &Sigma;<sup>i</sup><sub>m</sub>(h<sub>&theta;</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)<sup>2</sup> and we minimize this cost function.
 
 This is a commonly used function for regression problems.
 
@@ -44,9 +44,9 @@ The key is that the learning rate is multiplied by the derivative part (the slop
 
 When we substitute the derivative part of the gradient descent algorithm it becomes:
 
->θ0:=θ0 − α \* (1/m) \* ∑(hθ(xi)−yi)
+>θ0:=θ0 − α \* (1/m) \* ∑<sup>(i)</sup>(hθ(x<sup>(i)</sup>)−y<sup>(i)</sup>)
 
->θ1:=θ1 − α \* (1/m) \* ∑(hθ(xi)−yi) \* xi
+>θ1:=θ1 − α \* (1/m) \* ∑<sup>(i)</sup>(hθ(x<sup>(i)</sup>)−y<sup>(i)</sup>) \* x<sup>(i)</sup>
 
 *You can try deriving the partial derivative if you wish, not done here*
 
@@ -69,10 +69,10 @@ Another way of writing it is to define x<sub>0</sub> = 1 and let x be a n+1 dime
 
 ### New Gradient Descent
 >repeat until convergence: θj := θj − α * (∂/∂θj)J(θ)
-Where θ is the Theta vector and we simultaneous update for j = 0 .. n
+Where θ is the Theta vector and we simultaneous update for each feature j = 0 .. n
 
 Similarily, the partial derivative with respect to &theta;j is:
->>θ1:=θ1 − α \* (1/m) \* ∑(hθ(xi)−yi) \* x<sup>(i)</sup>j
+>θ<sub>j</sub>:=θ<sub>j</sub> − α \* (1/m) \* ∑<sup>i</sup><sub>m</sub>(hθ(x<sup>(i)</sup>)−y<sup>(i)</sup>) \* x<sup>(i)</sup><sub>j</sub>
 
 ### Debugging Gradient Descent
 1. **Make a plot of J(&theta;) where the x axis is &theta; and the y is the number of iterations**. Hopefully the plot should be downward sloping (decreasing after every iteration) convering to a certain value since gradient descent seeks to minimize J(&theta;). If it doesnt converge, you should re-adjust alpha. (you may have overshot the minimum).
@@ -88,7 +88,7 @@ More generally, we would like to get every feature into a -1\<x\<1 range or some
 
 ### Mean normalization
 People use mean normalization to get the feature values into the -1 to 1 range. Mean normalization (similar to z score calculation) is subtracting each value by the mean in the training set and then dividing it by the range (max-min) of the value.
-> xi = (xi - ui)/si
+> x<sup>(i)</sup> = (x<sup>(i)</sup> - u<sup>(i)</sup>)/s<sup>(i)</sup>
 
 ## Polynomial Regression
 It is possible to see that the straight line might not be the best fit for the data. It's possible to use linear regression concepts to apply it to polynomial regression. 
