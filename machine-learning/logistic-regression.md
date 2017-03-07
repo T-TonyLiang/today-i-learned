@@ -84,6 +84,6 @@ Here the **algorithm** is:
 > &theta;<sub>j</sub> := &theta;<sub>j</sub> - &alpha; * &Sigma;<sub>1</sub><sup>m</sup>(h(x<sup>(i)</sup>) - y<sup>(i)</sup>) * x<sup>(i)</sup><sub>j</sub>
 
 A **vectorized** implementation is:
-> θ:=θ−α/m * X<sup>T</sup> * (g(Xθ)− Y)
+> θ:=θ − α/m * X<sup>T</sup> * (g(Xθ)− Y)
 
 *note: that the definition of h(x) has changed from that of linear regression so the update rule, although it looks alike, is not the exact same as linear regression.*
