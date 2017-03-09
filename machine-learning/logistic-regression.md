@@ -87,3 +87,19 @@ A **vectorized** implementation is:
 > θ:=θ − α/m * X<sup>T</sup> * (g(Xθ)− Y)
 
 *note: that the definition of h(x) has changed from that of linear regression so the update rule, although it looks alike, is not the exact same as linear regression.*
+
+## Advanced Optimization
+To implement logistic regression, we need a way to compute J(&theta;) and the partial derivative of &theta;j with respect to J(&theta;) for j = 0, 1, ... n so that we can give it to gradient descent and let it find the minimum.
+
+There exist other such optimization algorithms:
+  - Gradient descent
+  - Conjugate gradient
+  - BFGS
+  - L-BFGS
+
+In comparison with **gradient descent**:
+  - Advantages
+    - No need to manually pick &alpha;
+    - Often faster than gradient descent
+  - Disadvantages
+    - More complex
