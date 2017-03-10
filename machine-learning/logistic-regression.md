@@ -103,3 +103,17 @@ In comparison with **gradient descent**:
     - Often faster than gradient descent
   - Disadvantages
     - More complex
+
+## Multiclass Classification
+There are multiple classes > 2 involved and we want to classify them. (ex. we want to group incoming emails into these categories: work, friends, family and hobby). We can assign each class a number: y = 0, y = 1 ... etc.
+
+### One vs All (one-vs-rest)
+We take any x number of classes and break them up into x binary classification problems. These binary classes represent: y = 0 if the training example is NOT in class z, y = 1 if the training example is in class z. Where z represents 1 to the total number of classes.
+
+In other words:
+> Train a logistic regression classifier h<sub>&theta;</sub><sup>(i)</sup>(x) for each class *i* to predict the probability that *y = i*
+
+### Making a prediction
+On a new input *x*, we want to pick the class *i* that maximizes: *h<sub>&theta;</sub><sup>(i)</sup>(x)*
+
+(ie. choose the class which is most confident or has the highest probability that *x* is part of their class)
