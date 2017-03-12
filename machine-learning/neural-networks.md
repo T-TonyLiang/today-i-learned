@@ -29,7 +29,7 @@ The dimensions of these matrices of weights is determined as follows:
 Define z<sup>(j)</sup> as the argument to the sigmoid function for layer j, where a<sup>(j)</sup> = g(z<sup>(j)</sup>).
 
 Then we can vectorize the inputs as:
-> z<sup>(j)</sup> = &theta;<sup>(j-1)T</sup> \* a<sup>(j-1)</sup> *(Matrix Multiplication)*
+> z<sup>(j)</sup> = &theta;<sup>(j-1)</sup> \* a<sup>(j-1)</sup> *(Matrix Multiplication)*
 
 Where z<sup>(j)</sup> is a vector of size that is the number of activation nodes for the layer *j*.
 
