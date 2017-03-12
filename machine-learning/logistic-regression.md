@@ -61,8 +61,8 @@ J(&theta;) = (1/m) * &Sigma;<sub>1</sub><sup>m</sup>Cost(h&theta;(x),y
 
 **Cost(h<sub>&theta;</sub>(x),y)** =
 ```
--log(h<sub>&theta;</sub>(x))          if y = 1
--log(1-h<sub>&theta;</sub>(x))        if y = 0
+-log(hθ(x))          if y = 1
+-log(1-hθ(x))        if y = 0
 ```
 In a more compact/simple method:
 > **J(&theta;)** = -(1/m) * &Sigma;<sub>1</sub><sup>m</sup>[y * log(h<sub>&theta;</sub>(x)) + (1 - y) * log(1 - h<sub>&theta;</sub>(x))]
