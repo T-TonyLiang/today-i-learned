@@ -14,4 +14,7 @@ Definition to commonly used terms, CS Jargon or short descriptions of new techno
 
 ## S
 
+**[SAML](https://onlinehelp.tableau.com/current/server/en-us/saml_about.htm)**: (Security Assertion Markup Language) is a standard for exchanging authentication information between a service provider and an identity provider. An example would be using Google (identity provider) auth to sign in for a private project (service provider). 
+
+
 **Serialization**: The process of converting an object or data structure to a format that allows for it to be stored (in a file, database ... etc).
