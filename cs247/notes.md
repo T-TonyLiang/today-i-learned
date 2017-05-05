@@ -34,7 +34,7 @@ A:
 
 *use const_cast for casting types instead of (type) in parentheses
   
-```
+```cpp
 attribute_; //data
 attribute(); //accessor
 attributeIs(...); //mutator
@@ -58,7 +58,7 @@ However, we can choose in the signature:
 C++ 11 introduced "move" semantics: compilers had "return value optimization" => write temporary object directly into "assigned space".
 
 ### operator>>, operator<<
-```
+```cpp
 ostream& operator<< (ostream &os, const RationalNumber &r) {
   const char slash = '/';
   os << r.numerator_ << slash << r.denominator_;
