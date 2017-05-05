@@ -106,7 +106,7 @@ Q: What happens if theres more than 1 match?
     - otherwise it's ambiguous
 
 Examples:
-```
+```cpp
 class X {public : X(int); X(string); };
 class Y {public : Y(int); };
 class Z {public : Z(X); };
