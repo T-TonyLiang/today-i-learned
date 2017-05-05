@@ -110,9 +110,18 @@ Examples:
 class X {public : X(int); X(string); };
 class Y {public : Y(int); };
 class Z {public : Z(X); };
-X f(X);
-Y f(Y);
-Z g(Z);
-X operator+(X, X);
+public X f(X);
+public Y f(Y);
+public Z g(Z);
+public X operator+(X, X);
 
-strings{"mack"};
+string s {"mack"}; // new constructor syntax
+f(X(1)); // ok
+f(1); // ambiguous, compiler doesnt know whether '1' is of class X or Y
+g(X(s)); // ok, X(s) -> Z implicitly via the constructor of Z
+g(Z(s)); // ok, s -> X(s) implicitly
+g(s); // not ok, can't implicitly invoke two constructors (creates X from s and Z from X to satisify g(Z))
+X x1 = 1 + 1; // ok, implicitly creates X from '1' twice and invokes the + operator
+```
+
+
