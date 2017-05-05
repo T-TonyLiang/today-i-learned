@@ -35,7 +35,84 @@ A:
 *use const_cast for casting types instead of (type) in parentheses
   
 ```
-attribute; //data
+attribute_; //data
 attribute(); //accessor
 attributeIs(...); //mutator
 ```
+
+### Operator Overloading
+First be aware of factors over which you have no control:
+  - can't introduce new operators. eg. no "++" for exponents
+  - can't change order of operator evaluation
+  - can't change # of arguments
+
+However, we can choose in the signature:
+  - return type
+  - argument types (within limits)
+  - whether to pass by reference or pass by value
+  - whether or not its a constructor or not
+  - whether or not its a member (once again, within limits)
+  - N.B. don't change the operator meaning i.e. dont make
+
+#### Counter-intuitive:
+C++ 11 introduced "move" semantics: compilers had "return value optimization" => write temporary object directly into "assigned space".
+
+### operator>>, operator<<
+```
+ostream& operator<< (ostream &os, const RationalNumber &r) {
+  const char slash = '/';
+  os << r.numerator_ << slash << r.denominator_;
+  
+  return os;
+}
+
+istream& operator>> (istream &is, RationalNumber &r) {
+  int num, denom;
+  char slash;
+  is >> num >> slash >> denom;
+  
+  // catch any errors with input, but no specific validators for the slash
+  if (is.fail()) return is;
+  r.numeratorIs(num);
+  r.denominatorIs(denom);
+}
+```
+
+#### Q: What has to be a member?
+  - accessors & mutators
+  - constructors (incl. copy, move and [] indexing which are assignments)
+  - destructor
+  - virtual methods
+
+#### Q: What cant be a member?
+  - I/O operators
+  - more generally, any operation where we don't want the first argument to be the class type (i.e. `int i; RationalNumber r` where we output i+r )
+  
+**Otherwise**, perfer non-member and non-friend:
+  - less code affected if implementation changes
+  - more secure since it has to use accessors/mutators
+  
+### Type Conversion of ADT objects
+Q: How does a compiler find a conversion function?
+  1) Exact match
+  2) Lossless conversion via "promotion" (i.e. bool => int, float => double)
+  3) standard conversions eg. double => int, int => double (might lose some data)
+  4) user defined conversions
+
+Q: What happens if theres more than 1 match?
+  - if 2 or more matches are at the same level, choice is ambiguous, so compiler stops with error
+  - otherwise, find the best possible match on argument basis
+    - if one function is at least as good for all arguments and better than all for one, it wins
+    - otherwise it's ambiguous
+
+Examples:
+```
+class X {public : X(int); X(string); };
+class Y {public : Y(int); };
+class Z {public : Z(X); };
+X f(X);
+Y f(Y);
+Z g(Z);
+X operator+(X, X);
+
+strings{"mack"};
