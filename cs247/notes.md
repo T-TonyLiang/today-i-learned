@@ -1,8 +1,8 @@
-# CS 247: Introduction to Software Principles
+## CS 247: Introduction to Software Principles
 
-## Abstract Data Types (ADTs)
+# Abstract Data Types (ADTs)
 
-### "Outside-In Design"
+## "Outside-In Design"
   1) start with client use cases & environment
   2) interface code, and test cases
   3) define class functionality
@@ -40,7 +40,7 @@ attribute(); //accessor
 attributeIs(...); //mutator
 ```
 
-### Operator Overloading
+## Operator Overloading
 First be aware of factors over which you have no control:
   - can't introduce new operators. eg. no "++" for exponents
   - can't change order of operator evaluation
@@ -124,4 +124,23 @@ g(s); // not ok, can't implicitly invoke two constructors (creates X from s and 
 X x1 = 1 + 1; // ok, implicitly creates X from '1' twice and invokes the + operator
 ```
 
+## Helper Functions
+  - use private methods or anonymous functions for helper functions
+  
+## Attribute-based ADTs
+  - ADT primarily composed of "virtual data members", accessors & mutators
+  - All other functions are non-member
+  => makes it easy to write the contract for the ADT
+  - Virtual data members: may not have actual storage, since it could be computed from other values. Changing an attribute may also cause a (re)computation to other attributes as a side effect.
+  
+### Safety
+  - enforces rage of legal values
+  - compiler reports type of incompatibilities
 
+### Evolvability
+  - ADT is stable ie. client code needen't chant if implementation changes
+  
+### Efficiency
+  - only areas we need to check for legal values are: constructors and mutators (both member and non-member)
+
+_**Exercise:**Design an ADT for Date, Money or SIN_
