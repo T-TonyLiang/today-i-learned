@@ -144,3 +144,16 @@ X x1 = 1 + 1; // ok, implicitly creates X from '1' twice and invokes the + opera
   - only areas we need to check for legal values are: constructors and mutators (both member and non-member)
 
 _**Exercise:**Design an ADT for Date, Money or SIN_
+
+# Value vs. Entity Objects, Information Hiding
+
+## Entity
+  - has a unique identity
+    - even if we have same data, if objects are distinct, they're different entities
+  - has a lifespan/continuity; can change over time & over implementation
+  - references (smart pointers?) or pointers
+
+## Value
+  - data immutable (faked in c++) eg. Java strings
+    - c++ returns new object by value & over-write (or rather move) of contents rather than modify "this"
+  - we don't care which one it is, given the data is identical
