@@ -1,2 +1,2 @@
-# learning-notes
-Notes from online courses, resources and basically everything that I've learned
+# Today I learned
+Notes from courses and resources
