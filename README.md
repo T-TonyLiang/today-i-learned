@@ -1,2 +1,2 @@
-# Today I learned
-Notes from courses and resources
+# Today I Learned
+Notes from courses, books and online resources
