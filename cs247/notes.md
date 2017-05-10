@@ -157,3 +157,52 @@ _**Exercise:**Design an ADT for Date, Money or SIN_
   - data immutable (faked in c++) eg. Java strings
     - c++ returns new object by value & over-write (or rather move) of contents rather than modify "this"
   - we don't care which one it is, given the data is identical
+
+#### Q: You are implementing a video game version of a card game. Which classes are Entity-based, which are Value-based ADT's?
+
+Class | Entity | Value  
+------|--------|--------
+Score |   | Y
+Player| Y |        
+Hand  | Y |        
+Deck  | Y |
+Card  | Y |
+
+#### Q: How do we restrict certain constructors or methods of an object?
+```cpp
+class X {
+  public:
+    X(const X&) = delete;
+    X&operator = (const X&) = delete;
+}
+```
+
+### Mutable Objects
+
+#### Q: How to make things immutable?
+A:
+  - remove all mutators
+  - make data members private
+  - ensure classes cannot be derived from (ie. "final") or make methods final
+  - whenever we receive or return a reference/pointer, make a copy instead of modifying the original
+
+Note: In C++, fake via deep copy + over-writing original object data via operator=
+
+### PImpl Idiom
+```c++
+class Rational::Impl {
+    int numerator_, denominator_;
+  public: 
+    Impl(int n, int d): numerator {n}, denominator {d} {}
+    ...
+};
+
+Rational::Rational(int n, int d): rat_ {new Rational::Impl {n,d}} {
+  if (d==0) throw "Panic! denominator = 0";
+  reduce();
+}
+```
+
+### rvalues
+> Every C++ expression is either an lvalue or an rvalue. An lvalue refers to an object that persists beyond a single expression. You can think of an lvalue as an object that has a name. All variables, including nonmodifiable (const) variables, are lvalues. An rvalue is a temporary value that does not persist beyond the expression that uses it. 
+
