@@ -27,6 +27,6 @@ list = [x for x in range(9)] # using list comprehension
   - `list.pop(0)` removes and returns value at the beginning of the list
   - `list[index]` gets the value at the index
 
-Note:
+### Notes
   - A list can have elements of multiple types
   
