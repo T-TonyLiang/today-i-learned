@@ -206,3 +206,14 @@ Rational::Rational(int n, int d): rat_ {new Rational::Impl {n,d}} {
 ### rvalues
 > Every C++ expression is either an lvalue or an rvalue. An lvalue refers to an object that persists beyond a single expression. You can think of an lvalue as an object that has a name. All variables, including nonmodifiable (const) variables, are lvalues. An rvalue is a temporary value that does not persist beyond the expression that uses it. 
 
+### Why do we need destructors?
+  - if an object requires resources
+  - may want a destructor for other purposes eg. logging
+  - virtual destructor to ensure inherited objects will implement one
+  - `virtual ~MyClass() = defualt`
+  
+### Copy and Swap
+Goal: provide a "safe" copy ie. if we run out of heap space, the original object is left unchanged.
+  1) make deep copy of RHS in temporary local object (temp)
+  2) swap info between LHS(this) and temp
+  3) temp's destruction cleans up original data
