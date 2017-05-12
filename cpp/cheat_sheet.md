@@ -1,10 +1,10 @@
 ## C++ Cheat Sheet
 
 # Table of Contents
-  1) [OOP](#object-oriented-programming)
+  1) [Object Oriented Programming (OOP)](#object-oriented-programming)
       - [Defining Classes](#defining-classes)
       - [Constructors](#constructors)
-      - [Accessors and Mutators](#accessors-mutators)
+      - [Accessors and Mutators](#accessors-and-mutators)
     
 
 # Object Oriented Programming
