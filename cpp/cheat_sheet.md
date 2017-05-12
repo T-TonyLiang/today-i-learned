@@ -2,9 +2,9 @@
 
 # Table of Contents
   1) [OOP](#object-oriented-programming)
-    - Defining Classes
-    - Constructors
-    - Accessors and Mutators
+      - [Defining Classes](#defining-classes)
+      - [Constructors](#constructors)
+      - [Accessors and Mutators](#accessors-mutators)
     
 
 # Object Oriented Programming
