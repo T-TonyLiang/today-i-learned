@@ -30,7 +30,17 @@ Non-member functions:
     - some functions has to be non-member
   - I/O operators has to be non-member
   - generally, any operation where one of the arguments is not of the class type should be a non-member function
-  
+
+Friends:
+  - non-member classes that have access to a class' private and protected fields
+  - declared with the friend keyword in the class
+  ```cpp
+  class foo {
+    friend istream& operator>> (istream&, foo&);
+  }
+  istream& operator>> (istream &sin, foo&){}
+  ```
+
 ## Constructors
   - a default constructor is defined by the compiler if no constructor is specified
     - initializes member variables to their default value
@@ -100,3 +110,19 @@ foo::foo() {
     return foo(this->bar() + a.bar());
   }
   ```
+
+## Abstract classes and Inheritance
+  - a virtually defined method is a method declaration preceeded with the keyword `virtual`
+    - the definition of the method normally within the class as the default behavior of the base class
+    - inherited classes can override the virtual function using the keyword `override` in the function declaration
+      - ex. `void bar() override`
+    - the keyword `final` can be used to prevent the virtual function from being overridden in further derived classes
+      - `final` can also be applied to a class, where the class cannot be inherited from anymore
+      - ex. `virtual int foo() final` and `class foobar final { ... }`
+    - virtual functions tell the compiler that the function could be overwritten in the inherited classes
+    - ex. `virtual int bar()`
+  - an abstract or pure virtual class is a class that has a virtual method ending in `=0`
+    - inherited classes must implement the pure virtual methods or it too will be abstract
+    - abstract or pure virtual classes 
+    - ex. `virtual int bar() = 0`
+  
