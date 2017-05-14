@@ -12,12 +12,7 @@ Definition to commonly used terms, CS Jargon or short descriptions of new techno
 
 **Daemon**: A computer program that runs as a background process.
 
-## S
-
-**[SAML](https://onlinehelp.tableau.com/current/server/en-us/saml_about.htm)**: (Security Assertion Markup Language) is a standard for exchanging authentication information between a service provider and an identity provider. An example would be using Google (identity provider) auth to sign in for a private project (service provider). 
-
-
-**Serialization**: The process of converting an object or data structure to a format that allows for it to be stored (in a file, database ... etc).
+**Dynamic Typing**: Languages that check for type correctness during runtime. Type errors will not be brought up at compile time (if applicable).
 
 ## P
 
@@ -26,3 +21,14 @@ Definition to commonly used terms, CS Jargon or short descriptions of new techno
 
 **Polymorphism** (OOP): The ability to have the same interface (ie. arithmetic operators, functions) for different objects and data types.
 
+## S
+
+**[SAML](https://onlinehelp.tableau.com/current/server/en-us/saml_about.htm)**: (Security Assertion Markup Language) is a standard for exchanging authentication information between a service provider and an identity provider. An example would be using Google (identity provider) auth to sign in for a private project (service provider). 
+
+**Serialization**: The process of converting an object or data structure to a format that allows for it to be stored (in a file, database ... etc).
+
+**Static Typing**: Languages that check for type correctness during compile time. These languages are less likely to have runtime type errors.
+
+## T
+
+**Type Inference**: Automatic deduction of the data type of an expression in a programming language. (Wikipedia)
