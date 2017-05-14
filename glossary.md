@@ -18,3 +18,11 @@ Definition to commonly used terms, CS Jargon or short descriptions of new techno
 
 
 **Serialization**: The process of converting an object or data structure to a format that allows for it to be stored (in a file, database ... etc).
+
+## P
+
+**Parametric Polymorphism**: The ability to define a general function that acts on various different types, while maintaing static type safety.
+
+
+**Polymorphism** (OOP): The ability to have the same interface (ie. arithmetic operators, functions) for different objects and data types.
+
