@@ -217,3 +217,36 @@ Goal: provide a "safe" copy ie. if we run out of heap space, the original object
   1) make deep copy of RHS in temporary local object (temp)
   2) swap info between LHS(this) and temp
   3) temp's destruction cleans up original data
+
+# Modules
+Q: Why do we want to be able to decompose our program into multiple source files?
+A:
+  1) Allows work to be done independently and in parallel
+  2) allows recompilation of only what changed and then re-link
+  3) makes it easier to reuse components
+  4) allows code to evolve
+
+**Module Declaraction**: 
+  - tells the compiler of a name. eg. type or constant
+  - if compiler has no declaration, compilation stops
+  - can be repeated
+  
+**Module Definition**:
+  - tells compiler amout of space to allocate
+  - tells compiler what ADT methods exist & their signatures
+  - there can only be 1 definition or else the compilation stops
+  
+Rule of thumb: perfer declarations (as in forward decl.) over definitions, where you can
+
+**Global constants** declared, possibly in multiple header files but defined in one location.
+  - ex. `extern const double PI;` can occur in multiple header files
+  - ex. `const double PI = 3.14159;` defined in 1 .cc file
+
+/*/* compiling with `g++-5 -E` shows the preprocessor output
+
+**Q: when must you include?**
+A: when compiler needs to know amount of space. eg. inheritance or inlined code
+  - cant fix inheritance but can turn an object into a pointer/reference & move inlined code into implementation file
+
+/*/* NEVER NEVER: put `using namespace std;` in your .h file
+
