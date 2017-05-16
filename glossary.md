@@ -14,6 +14,10 @@ Definition to commonly used terms, CS Jargon or short descriptions of new techno
 
 **Dynamic Typing**: Languages that check for type correctness during runtime. Type errors will not be brought up at compile time (if applicable).
 
+## M
+
+**Memoization**: an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again. (Wikipedia)
+
 ## P
 
 **Parametric Polymorphism**: The ability to define a general function that acts on various different types, while maintaing static type safety.
