@@ -250,3 +250,75 @@ A: when compiler needs to know amount of space. eg. inheritance or inlined code
 
 /*/* NEVER NEVER: put `using namespace std;` in your .h file
 
+# Namespaces
+
+  - can be defined globally or nested inside eath other (can't be placed inside functions or classes)
+  - definition supercedes (hides) previous definition.
+  - multiple namespace declarations are incremental ie. adds to previous def
+  - it is considered a best practice to not re-open the namespace to implement/define; use the `::` scope operator
+    - ie. `RadAdT::Rational::Rational(...)`
+  - can't put definition in an unrelated namespace
+
+
+Q: what is namespace pollution
+A: clashes among global names in large, multi module systems with multiple developers
+  - names must be unique
+  - problem increases once libraryes are brought in since they define constants, types, templates, functions etc...
+  - old solution: prefix all related info with a (hopefully unique) string
+  - use namespace to create a local scope: use it to package related info eg. types classes, free routines, constants, etc.
+    - if the namespace spans multiple files, need to include all files if you want all; otherwise we only see what is included since visibility is local to file. ie. `include <iostream>` for std::cout, but std::string will not be included.
+    
+ Q: Why use local namespaces?
+ A:
+  - prevents export of names
+  - protects local names from clashes
+  - visible in file without qualification for ease-of-use
+  
+```cpp
+namespace X {
+  int i, j, k;
+}
+int K;
+void f() {
+  int i = 0;
+  using namespace X;
+  i += 1; // local i, superceded
+  j += 1; // X's j
+  k += 1; // ambiguous
+  ::k += 1; // global k
+  x::k += 1; // X's k
+}
+
+void f2() {
+  int i = 0;
+  using X::i; // second def of i
+  using X::j;
+  using X::k;
+  i += 1; // local
+  j += 1; // x::j
+  k += 1; // x::k
+}
+
+//header1.h
+namespace A {
+  int f(double);
+}
+//header2.h
+namespace B {
+  using A::f;
+  void g() { f(1) };
+}
+//header3.h
+namespace A {
+  int f(int);
+}
+```
+What gets used depends on order of includes!!!
+  - 1,2,3 => f(double)
+  - 2,1,3 => none because f is not included yet
+  - 1,3,2 => both visible, pick the better match
+  - 3,2,1 => f(int)
+
+}
+
+}
