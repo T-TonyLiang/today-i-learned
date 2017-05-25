@@ -29,4 +29,10 @@ list = [x for x in range(9)] # using list comprehension
 
 ### Notes
   - A list can have elements of multiple types
+  - Lists are passed by **reference** in python, ie. they are pointers to other values
+    - to pass by value use:
+    ```
+    lst = []
+    lst[:]
+    ```
   
